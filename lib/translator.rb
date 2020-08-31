@@ -23,13 +23,13 @@ def load_library(path)
   # end
   # emoticon_lib
   emoticons = YAML.load_file(path)
-  emoticon_lib = {"get_meaning" => {}, "get_emoticon" =>{}}
+  emoticon_lib = {:get_meaning => {}, :get_emoticon =>{}}
   emoticons.each do |key, value|
     emoticon_lib["get_meaning"][value[1]] = key 
     emoticon_lib["get_emoticon"][value[0]] = emoticons[key][1]
   
   end
-  
+  emoticon_lib
 end
 
 # def get_english_meaning(path, emoticon)
@@ -55,29 +55,29 @@ end
 #   end
 # end
 
-def load_library(emoticon_file)
-  emoticons = YAML.load_file(emoticon_file)
+# def load_library(emoticon_file)
+#   emoticons = YAML.load_file(emoticon_file)
 
-  emoticon_lib = {'get_meaning'  => {},
-                  'get_emoticon' => {} }
+#   emoticon_lib = {'get_meaning'  => {},
+#                   'get_emoticon' => {} }
 
-  emoticons.each do |meaning, value|  # meaning= "surprised"   # value= [":o", "o_O"]  <-(e,j)
-    english = value[0]
-    japanese = value[1]
-    emoticon_lib['get_meaning'][japanese] = meaning
-    emoticon_lib['get_emoticon'][english] = japanese
-  end
-  emoticon_lib
-end
+#   emoticons.each do |meaning, value|  # meaning= "surprised"   # value= [":o", "o_O"]  <-(e,j)
+#     english = value[0]
+#     japanese = value[1]
+#     emoticon_lib['get_meaning'][japanese] = meaning
+#     emoticon_lib['get_emoticon'][english] = japanese
+#   end
+#   emoticon_lib
+# end
 
-def get_english_emoticon(emoticon_file, emoticon)
-  emoticon_lib = load_library(emoticon_file)
-  english_emoticon = emoticon_lib['get_meaning'][emoticon]
-  english_emoticon ? japanese_emoticon : 'Sorry, that emoticon was not found'
-end
+# def get_english_emoticon(emoticon_file, emoticon)
+#   emoticon_lib = load_library(emoticon_file)
+#   english_emoticon = emoticon_lib['get_meaning'][emoticon]
+#   english_emoticon ? japanese_emoticon : 'Sorry, that emoticon was not found'
+# end
 
-def get_japanese_emoticon(emoticon_file, emoticon)
-  emoticon_lib = load_library(emoticon_file)
-  japanese_emoticon = emoticon_lib['get_emoticon'][emoticon]
-  japanese_emoticon ? japanese_emoticon : 'Sorry, that emoticon was not found'
-end
+# def get_japanese_emoticon(emoticon_file, emoticon)
+#   emoticon_lib = load_library(emoticon_file)
+#   japanese_emoticon = emoticon_lib['get_emoticon'][emoticon]
+#   japanese_emoticon ? japanese_emoticon : 'Sorry, that emoticon was not found'
+# end
