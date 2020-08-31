@@ -26,6 +26,7 @@ def load_library(path)
   emoticon_lib = {"get_meaning" => {}, "get_emoticon" =>{}}
   emoticons.each do |key, value|
     emoticon_lib["get_meaning"][value[1]] = key 
+    emoticon_lib["get_emoticon"][value[0]] = emoticons[key][1]
   
   end
   
