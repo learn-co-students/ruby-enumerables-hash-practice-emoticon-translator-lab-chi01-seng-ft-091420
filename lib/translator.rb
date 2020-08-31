@@ -24,7 +24,10 @@ def load_library(path)
   # emoticon_lib
   emoticons = YAML.load_file(path)
   emoticon_lib = {"get_meaning" => {}, "get_emoticon" =>{}}
+  emoticons.each do |key, value|
+    emoticon_lib["get_meaning"][value[1]] = key 
   
+  end
   
 end
 
