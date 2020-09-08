@@ -1,13 +1,20 @@
 # require modules here
 
 def load_library
-  # code goes here
+  {
+      'happy' => {
+         :english => ":)",
+         :japanese => "(＾ｖ＾)"
+      }
+   }
 end
 
 def get_japanese_emoticon
-  # code goes here
+  get_japanese_emoticon["./lib/emoticons.yml", ":)"]
+     => "(＾ｖ＾)"
+   get_japanese_emoticon["./lib/emoticons.yml", ":o"]
 end
 
 def get_english_meaning
-  # code goes here
+  get_english_meaning[lib/emoticons.yml]
 end
